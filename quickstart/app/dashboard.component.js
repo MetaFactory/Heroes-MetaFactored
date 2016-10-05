@@ -11,28 +11,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var router_1 = require('@angular/router');
 var hero_service_1 = require('./hero.service');
-var loser_service_1 = require('./loser.service');
 var DashboardComponent = (function () {
-    function DashboardComponent(router, heroService, loserService) {
+    function DashboardComponent(router, heroService) {
         this.router = router;
         this.heroService = heroService;
-        this.loserService = loserService;
         this.heroes = [];
-        this.losers = [];
     }
     DashboardComponent.prototype.ngOnInit = function () {
         var _this = this;
         this.heroService.getHeroes()
             .then(function (heroes) { return _this.heroes = heroes.slice(1, 5); });
-        this.loserService.getLosers()
-            .then(function (losers) { return _this.losers = losers.slice(1, 5); });
     };
     DashboardComponent.prototype.gotoDetailHero = function (hero) {
         var link = ['detail', hero.id];
-        this.router.navigate(link);
-    };
-    DashboardComponent.prototype.gotoDetailLoser = function (loser) {
-        var link = ['detail', loser.id];
         this.router.navigate(link);
     };
     DashboardComponent = __decorate([
@@ -42,7 +33,7 @@ var DashboardComponent = (function () {
             templateUrl: 'dashboard.component.html',
             styleUrls: ['dashboard.component.css']
         }), 
-        __metadata('design:paramtypes', [router_1.Router, hero_service_1.HeroService, loser_service_1.LoserService])
+        __metadata('design:paramtypes', [router_1.Router, hero_service_1.HeroService])
     ], DashboardComponent);
     return DashboardComponent;
 }());

@@ -4,8 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent }  from './dashboard.component';
 import { HeroesComponent }       from './heroes.component';
 import { HeroDetailComponent }   from './hero-detail.component';
-import { LosersComponent }       from './losers.component';
-import { LoserDetailComponent }   from './loser-detail.component';
 
 const appRoutes: Routes = [
   {
@@ -23,13 +21,6 @@ const appRoutes: Routes = [
   }, {
     path: 'heroes',
     component: HeroesComponent
-  },
-   {
-    path: 'detail/:id',     // id of the single selected entity.
-    component: LoserDetailComponent
-  }, {
-    path: 'losers',
-    component: LosersComponent
   },
 ];
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);

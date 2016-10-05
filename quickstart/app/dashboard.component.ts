@@ -3,8 +3,6 @@ import { Router }            from '@angular/router';
 
 import { Hero }        from './hero';
 import { HeroService } from './hero.service';
-import { Loser }        from './loser';
-import { LoserService } from './loser.service';
 
 @Component({
   moduleId: module.id,
@@ -14,27 +12,19 @@ import { LoserService } from './loser.service';
 })
 export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
-  losers: Loser[] = [];
 
   constructor(
     private router: Router,
-    private heroService: HeroService,
-    private loserService: LoserService) {
+    private heroService: HeroService) {
   }
 
   ngOnInit(): void {
     this.heroService.getHeroes()
       .then(heroes => this.heroes = heroes.slice(1, 5));
-    this.loserService.getLosers()
-      .then(losers => this.losers = losers.slice(1, 5));
   }
 
   gotoDetailHero(hero: Hero): void {
     let link = ['detail', hero.id];
-    this.router.navigate(link);
-  }
-  gotoDetailLoser(loser: Loser): void {
-    let link = ['detail', loser.id];
     this.router.navigate(link);
   }
 }
