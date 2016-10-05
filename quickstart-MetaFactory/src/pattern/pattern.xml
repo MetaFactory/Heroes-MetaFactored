@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pattern
+        xsi:schemaLocation="http://www.firstbase.nl/xsd/personaliom/pattern http://www.firstbase.nl/xsd/personaliom/pattern.xsd"
+        xmlns:xi="http://www.w3.org/2001/XInclude"
+        xmlns="http://www.firstbase.nl/xsd/personaliom/pattern"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <properties>
+        <webapp.main.directory></webapp.main.directory>
+        <app.name>my-app</app.name>
+        <app.title>Tour of Heroes</app.title>
+    </properties>
+
+
+    <!--################################## General Entity Configuration Angular2 ####################################-->
+    <xi:include parse="xml" href="webAngular2/entities/classTs.xml"/>
+    <xi:include parse="xml" href="webAngular2/entities/classServiceTs.xml"/>
+    <xi:include parse="xml" href="webAngular2/entities/classComponentTs.xml"/>
+    <xi:include parse="xml" href="webAngular2/entities/classComponentHtml.xml"/>
+    <xi:include parse="xml" href="webAngular2/entities/classComponentCss.xml"/>
+    <xi:include parse="xml" href="webAngular2/entities/classComponentDetailTs.xml" />
+    <xi:include parse="xml" href="webAngular2/entities/classComponentDetailHtml.xml"/>
+    <xi:include parse="xml" href="webAngular2/entities/classComponentDetailCss.xml"/>
+    <xi:include parse="xml" href="webAngular2/entities/classComponentSearchTs.xml" />
+    <xi:include parse="xml" href="webAngular2/entities/classComponentSearchHtml.xml"/>
+    <xi:include parse="xml" href="webAngular2/entities/classComponentSearchCss.xml"/>
+    <xi:include parse="xml" href="webAngular2/entities/classComponentSearchServiceTs.xml"/>
+
+    <!--######################## Angular2 default app structure###############################################################-->
+    <xi:include parse="xml" href="webAngular2/app/index.xml"/>
+    <xi:include parse="xml" href="webAngular2/app/appMainTs.xml"/>
+    <xi:include parse="xml" href="webAngular2/app/rxjs-extensionsTs.xml"/>
+    <xi:include parse="xml" href="webAngular2/app/appModuleTs.xml"/>
+    <xi:include parse="xml" href="webAngular2/app/appRoutingTs.xml"/>
+    <xi:include parse="xml" href="webAngular2/app/appComponentTs.xml"/>
+    <xi:include parse="xml" href="webAngular2/app/appComponentCss.xml"/>
+
+    <xi:include parse="xml" href="webAngular2/app/inMemoryDataServiceTs.xml"/>
+
+    <xi:include parse="xml" href="webAngular2/app/dashboardComponentTs.xml"/>
+    <xi:include parse="xml" href="webAngular2/app/dashboardComponentHtml.xml"/>
+    <xi:include parse="xml" href="webAngular2/app/dashboardComponentCss.xml"/>
+</pattern>

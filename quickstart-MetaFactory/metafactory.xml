@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<personal-iom-project xsi:schemaLocation="http://www.firstbase.nl/xsd/personaliom/project http://www.firstbase.nl/xsd/personaliom/project.xsd" allowDeprecated="true" xmlns="http://www.firstbase.nl/xsd/personaliom/project" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <model>src/model/model.xml</model>
+  <pattern>src/pattern/pattern.xml</pattern>
+  <snippetsFolder>src/snippets</snippetsFolder>
+  <output>
+    <path type="java">../quickstart</path>
+    <path type="xml">../quickstart</path>
+    <path type="file">../quickstart</path>
+  </output>
+
+
+
+  <buildSets>
+    <!--Angular2 buildsets-->
+    <buildSet name="Typescript">
+      <file name="*.ts"/>
+    </buildSet>
+    <buildSet name="html and Typescript">
+      <file name="*.html"/>
+      <file name="*.ts"/>
+    </buildSet>
+    <buildSet name="html only">
+      <file name="*.html"/>
+    </buildSet>
+  </buildSets>
+
+   <maps>
+        <!-- Update the default map with name typescript types-->
+        <map name="typeScriptTypes">
+            <!-- override the mapping for Integer and String with the equivalent typescript types:-->
+            <entry key="Integer" value="number"/>
+            <entry key="String" value="string"/>
+        </map>
+    </maps>
+
+    <businessStyle>
+    <createDefaultJavaDocForClass>true</createDefaultJavaDocForClass>
+    <addAuthorToDefaultJavaDocForClass>true</addAuthorToDefaultJavaDocForClass>
+    <createDefaultJavaDocForInterface>true</createDefaultJavaDocForInterface>
+    <addAuthorToDefaultJavaDocForInterface>true</addAuthorToDefaultJavaDocForInterface>
+  </businessStyle>
+
+</personal-iom-project>

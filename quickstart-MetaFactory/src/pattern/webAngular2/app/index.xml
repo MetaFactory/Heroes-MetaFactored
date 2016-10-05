@@ -1,0 +1,9 @@
+<file xmlns="http://www.firstbase.nl/xsd/personaliom/pattern"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.firstbase.nl/xsd/personaliom/pattern http://www.firstbase.nl/xsd/personaliom/pattern.xsd"
+      name="index.html"
+      path="${pattern.property.webapp.main.directory}"
+      trimLeading="false"
+      trimTrailing="false">
+    <body>${fmsnippet.webAngular2.app.index}</body>
+</file>

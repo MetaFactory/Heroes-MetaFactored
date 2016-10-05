@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model xmlns="http://www.firstbase.nl/xsd/personaliom/model" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.firstbase.nl/xsd/personaliom/model http://www.firstbase.nl/xsd/personaliom/model.xsd">
+    <package name="domain">
+        <object name="Hero">
+            <properties>
+                <name.plural>Heroes</name.plural>
+            </properties>
+            <attribute name="id" type="Integer"/>
+            <attribute name="name" type="String"/>
+        </object>
+                <object name="Loser">
+            <properties>
+                <name.plural>Losers</name.plural>
+            </properties>
+            <attribute name="id" type="Integer"/>
+            <attribute name="name" type="String"/>
+        </object>
+    </package>
+</model>
