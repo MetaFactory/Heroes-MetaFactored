@@ -9,12 +9,6 @@
             <attribute name="id" type="Integer"/>
             <attribute name="name" type="String"/>
         </object>
-                <object name="Loser">
-            <properties>
-                <name.plural>Losers</name.plural>
-            </properties>
-            <attribute name="id" type="Integer"/>
-            <attribute name="name" type="String"/>
-        </object>
+
     </package>
 </model>
