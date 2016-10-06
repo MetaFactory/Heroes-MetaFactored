@@ -1,19 +1,20 @@
 <#--stop if $currentModelObject is null-->
 <#if !(currentModelPackage)??>  <#stop "currentModelPackage not found in context" ></#if>
-<#assign modelEntities = currentModelPackage.getChildren("object", nsModel)>
+<#assign modelObjects = currentModelPackage.getChildren("object", nsModel)>
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { DashboardComponent }  from './dashboard.component';
 <#-- Create the Component imports for the objects in the MetaFactory model. -->
-<#list modelEntities as entity>
-    <#assign entityName = entity.getAttributeValue("name")>
-    <#assign entityNameLC = entity.getAttributeValue("name")?lower_case>
-    <#assign entityNameFU = entity.getAttributeValue("name")?cap_first>
-    <#assign entityNamePL = generator.getElementProperty(entity, "name.plural", "${entityName}s")>
-    <#assign entityNamePLLC = entityNamePL?lower_case>
-import { ${entityNamePL}Component }       from './${entityNamePLLC}.component';
-import { ${entityName}DetailComponent }   from './${entityNameLC}-detail.component';
+<#list modelObjects as object>
+    <#assign objectName = object.getAttributeValue("name")>
+    <#assign objectNameLC = object.getAttributeValue("name")?lower_case>
+    <#assign objectNameFU = object.getAttributeValue("name")?cap_first>
+    <#assign objectNamePL = generator.getElementProperty(object, "name.plural", "${objectName}s")>
+    <#assign objectNamePLLC = objectNamePL?lower_case>
+import { ${objectNamePL}Component }       from './${objectNamePLLC}.component';
+import { ${objectName}SearchComponent }   from './${objectNameLC}-search.component';
+import { ${objectName}DetailComponent }   from './${objectNameLC}-detail.component';
 </#list>
 
 const appRoutes: Routes = [
@@ -27,20 +28,22 @@ const appRoutes: Routes = [
     component: DashboardComponent
   },
 <#--Add the component routes for the objectDetailComponent, objectDialogComponent and objectsComponent -->
-<#list modelEntities as entity>
-    <#assign entityNameLC = entity.getAttributeValue("name")?lower_case>
-    <#assign entityNameFU = entity.getAttributeValue("name")?cap_first>
-    <#assign entityNameFL = entity.getAttributeValue("name")?uncap_first>
-    <#assign entityName   = entity.getAttributeValue("name")>
-    <#assign entityNamePL = generator.getElementProperty(entity, "name.plural", "${entityName}s")>
-    <#assign entityNamePLFL = entityNamePL?uncap_first>
+<#list modelObjects as object>
+    <#assign objectNameLC = object.getAttributeValue("name")?lower_case>
+    <#assign objectNameFU = object.getAttributeValue("name")?cap_first>
+    <#assign objectNameFL = object.getAttributeValue("name")?uncap_first>
+    <#assign objectName   = object.getAttributeValue("name")>
+    <#assign objectNamePL = generator.getElementProperty(object, "name.plural", "${objectName}s")>
+    <#assign objectNamePLFL = objectNamePL?uncap_first>
    {
-    <#--path: '${entityNameLC}-detail/:id',     // id of the single selected entity.-->
-    path: 'detail/:id',     // id of the single selected entity.
-    component: ${entityNameFU}DetailComponent
+    path: '${objectNameFL}-search/:id',     // id of the single selected object.
+    component: ${objectNameFU}SearchComponent
+  },{
+    path: '${objectNameFL}-detail/:id',     // id of the single selected object.
+    component: ${objectNameFU}DetailComponent
   }, {
-    path: '${entityNamePLFL}',
-    component: ${entityNamePL}Component
+    path: '${objectNamePLFL}',
+    component: ${objectNamePL}Component
   },
 </#list>
 ];

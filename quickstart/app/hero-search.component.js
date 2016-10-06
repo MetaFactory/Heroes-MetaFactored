@@ -38,13 +38,13 @@ var HeroSearchComponent = (function () {
         });
     };
     HeroSearchComponent.prototype.gotoDetail = function (hero) {
-        var link = ['detail', hero.id];
+        var link = ['hero-detail', hero.id];
         this.router.navigate(link);
     };
     HeroSearchComponent = __decorate([
         core_1.Component({
             moduleId: module.id,
-            selector: 'hero-search',
+            selector: 'Hero-search',
             templateUrl: 'hero-search.component.html',
             styleUrls: ['hero-search.component.css'],
             providers: [hero_search_service_1.HeroSearchService]

@@ -15,6 +15,10 @@ import { HeroesComponent }           from './heroes.component';
 import { HeroDetailComponent }   from './hero-detail.component';
 import { HeroService }           from './hero.service';
 import { HeroSearchComponent }   from './hero-search.component';
+import { LosersComponent }           from './losers.component';
+import { LoserDetailComponent }   from './loser-detail.component';
+import { LoserService }           from './loser.service';
+import { LoserSearchComponent }   from './loser-search.component';
 import { routing }              from './app.routing';
 
 
@@ -32,9 +36,13 @@ import { routing }              from './app.routing';
         HeroDetailComponent,
         HeroesComponent,
         HeroSearchComponent,
+        LoserDetailComponent,
+        LosersComponent,
+        LoserSearchComponent,
     ],
     providers: [
         HeroService,
+        LoserService,
     ],
     bootstrap:    [
         AppComponent

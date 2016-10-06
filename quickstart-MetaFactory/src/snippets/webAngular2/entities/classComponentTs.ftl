@@ -2,7 +2,7 @@
 <#if !(currentModelObject)??>  <#stop "currentModelObject not found in context" ></#if>
 <#assign modelObjectName = currentModelObject.getAttributeValue("name")>
 <#assign modelObjectNameFL = modelObjectName?uncap_first>
-<#assign modelObjectNamePL = generator.getElementProperty(currentModelObject, "name.plural", "${modelObjectName}s")>
+<#assign modelObjectNamePL = metafactory.getElementProperty(currentModelObject, "name.plural", "${modelObjectName}s")>
 <#assign modelObjectNamePLFL = modelObjectNamePL?uncap_first>
 <#assign modelObjectNameLC = modelObjectName?lower_case>
 <#assign attributes = currentModelObject.getChildren("attribute", nsModel)>
@@ -16,14 +16,14 @@ import { ${modelObjectName} }                from './${modelObjectNameLC}';
 import { ${modelObjectName}Service }         from './${modelObjectNameLC}.service';
 
 <#-- Create the Class imports for the referenced objects in the MetaFactory model. -->
-/** Import references: */
+<#--/** Import references: */-->
 <#assign references = currentModelObject.getChildren("reference", nsModel)>
-<#list references as entity>
-    <#assign entityName = entity.getAttributeValue("name")>
-    <#assign entityNameLC = entityName?lower_case>
-    <#assign entityNameFL = entityName?uncap_first>
-    <#assign entityNameFC = entityName?cap_first>
-import { ${entityNameFC} } from './${entityNameLC}';
+<#list references as reference>
+    <#assign referenceName = reference.getAttributeValue("name")>
+    <#assign referenceNameLC = referenceName?lower_case>
+    <#assign referenceNameFL = referenceName?uncap_first>
+    <#assign referenceNameFC = referenceName?cap_first>
+import { ${referenceNameFC} } from './${referenceNameLC}';
 </#list>
 
 @Component({
@@ -74,7 +74,7 @@ export class ${modelObjectNamePL}Component implements OnInit {
   }
 
   gotoDetail(): void {
-    this.router.navigate(['/detail', this.selected${modelObjectName}.id]);
+    this.router.navigate(['${modelObjectNameFL}-detail', this.selected${modelObjectName}.id]);
   }
 }
 

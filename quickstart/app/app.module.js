@@ -22,6 +22,10 @@ var heroes_component_1 = require('./heroes.component');
 var hero_detail_component_1 = require('./hero-detail.component');
 var hero_service_1 = require('./hero.service');
 var hero_search_component_1 = require('./hero-search.component');
+var losers_component_1 = require('./losers.component');
+var loser_detail_component_1 = require('./loser-detail.component');
+var loser_service_1 = require('./loser.service');
+var loser_search_component_1 = require('./loser-search.component');
 var app_routing_1 = require('./app.routing');
 var AppModule = (function () {
     function AppModule() {
@@ -41,9 +45,13 @@ var AppModule = (function () {
                 hero_detail_component_1.HeroDetailComponent,
                 heroes_component_1.HeroesComponent,
                 hero_search_component_1.HeroSearchComponent,
+                loser_detail_component_1.LoserDetailComponent,
+                losers_component_1.LosersComponent,
+                loser_search_component_1.LoserSearchComponent,
             ],
             providers: [
                 hero_service_1.HeroService,
+                loser_service_1.LoserService,
             ],
             bootstrap: [
                 app_component_1.AppComponent

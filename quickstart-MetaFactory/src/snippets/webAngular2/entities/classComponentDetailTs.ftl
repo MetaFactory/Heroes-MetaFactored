@@ -14,7 +14,7 @@ import { ${modelObjectName}Service } from './${modelObjectNameLC}.service';
 
 @Component({
   moduleId: module.id,
-  selector: 'my-${modelObjectNameLC}-detail',
+  selector: '${modelObjectName}-detail',
   templateUrl: '${modelObjectNameLC}-detail.component.html',
   styleUrls: [ '${modelObjectNameLC}-detail.component.css' ]
 })

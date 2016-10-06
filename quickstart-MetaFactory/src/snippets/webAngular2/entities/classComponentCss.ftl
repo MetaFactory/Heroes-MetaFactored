@@ -1,14 +1,18 @@
+<#assign modelObjectName = currentModelObject.getAttributeValue("name")>
+<#assign modelObjectNameFL = modelObjectName?uncap_first>
+<#assign modelObjectNamePL = metafactory.getElementProperty(currentModelObject, "name.plural", "${modelObjectName}s")>
+<#assign modelObjectNamePLFL = modelObjectNamePL?uncap_first>
 .selected {
   background-color: #CFD8DC !important;
   color: white;
 }
-.heroes {
+.${modelObjectNamePLFL} {
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
   width: 15em;
 }
-.heroes li {
+.${modelObjectNamePLFL} li {
   cursor: pointer;
   position: relative;
   left: 0;
@@ -18,20 +22,20 @@
   height: 1.6em;
   border-radius: 4px;
 }
-.heroes li:hover {
+.${modelObjectNamePLFL} li:hover {
   color: #607D8B;
   background-color: #DDD;
   left: .1em;
 }
-.heroes li.selected:hover {
+.${modelObjectNamePLFL} li.selected:hover {
   background-color: #BBD8DC !important;
   color: white;
 }
-.heroes .text {
+.${modelObjectNamePLFL} .text {
   position: relative;
   top: -3px;
 }
-.heroes .badge {
+.${modelObjectNamePLFL} .badge {
   display: inline-block;
   font-size: small;
   color: white;

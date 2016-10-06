@@ -1,4 +1,4 @@
-<#assign modelEntities = currentModelPackage.getChildren("object", nsModel)>
+<#assign modelObjects = currentModelPackage.getChildren("object", nsModel)>
 import './rxjs-extensions';
 
 import { NgModule }      from '@angular/core';
@@ -12,17 +12,17 @@ import { InMemoryDataService }  from './in-memory-data.service';
 
 import { AppComponent }         from './app.component';
 import { DashboardComponent }   from './dashboard.component';
-<#-- Create the Component imports for the objects in the MetaFactory model. -->
-<#list modelEntities as entity>
-    <#assign entityName = entity.getAttributeValue("name")>
-    <#assign entityNameLC = entity.getAttributeValue("name")?lower_case>
-    <#assign entityNameFU = entity.getAttributeValue("name")?cap_first>
-    <#assign entityNamePL = generator.getElementProperty(entity, "name.plural", "${entityName}s")>
-    <#assign entityNamePLLC = entityNamePL?lower_case>
-import { ${entityNamePL}Component }           from './${entityNamePLLC}.component';
-import { ${entityName}DetailComponent }   from './${entityNameLC}-detail.component';
-import { ${entityName}Service }           from './${entityNameLC}.service';
-import { ${entityName}SearchComponent }   from './${entityNameLC}-search.component';
+<#-- Create the Component imports for all the objects in the MetaFactory model. -->
+<#list modelObjects as object>
+    <#assign objectName = object.getAttributeValue("name")>
+    <#assign objectNameLC = object.getAttributeValue("name")?lower_case>
+    <#assign objectNameFU = object.getAttributeValue("name")?cap_first>
+    <#assign objectNamePL = generator.getElementProperty(object, "name.plural", "${objectName}s")>
+    <#assign objectNamePLLC = objectNamePL?lower_case>
+import { ${objectNamePL}Component }           from './${objectNamePLLC}.component';
+import { ${objectName}DetailComponent }   from './${objectNameLC}-detail.component';
+import { ${objectName}Service }           from './${objectNameLC}.service';
+import { ${objectName}SearchComponent }   from './${objectNameLC}-search.component';
 </#list>
 import { routing }              from './app.routing';
 
@@ -39,18 +39,20 @@ import { routing }              from './app.routing';
     declarations: [
         AppComponent,
         DashboardComponent,
-        <#list modelEntities as entity>
-            <#assign entityName = entity.getAttributeValue("name")>
-            <#assign entityNamePL = generator.getElementProperty(entity, "name.plural", "${entityName}s")>
-        ${entityName}DetailComponent,
-        ${entityNamePL}Component,
-        ${entityName}SearchComponent,
+        <#-- Declare the Components for all the objects in the MetaFactory model. -->
+        <#list modelObjects as object>
+            <#assign objectName = object.getAttributeValue("name")>
+            <#assign objectNamePL = generator.getElementProperty(object, "name.plural", "${objectName}s")>
+        ${objectName}DetailComponent,
+        ${objectNamePL}Component,
+        ${objectName}SearchComponent,
         </#list>
     ],
     providers: [
-        <#list modelEntities as entity>
-            <#assign entityName = entity.getAttributeValue("name")>
-        ${entityName}Service,
+        <#-- Add the providers for all the objects in the MetaFactory model. -->
+        <#list modelObjects as object>
+            <#assign objectName = object.getAttributeValue("name")>
+        ${objectName}Service,
         </#list>
     ],
     bootstrap:    [

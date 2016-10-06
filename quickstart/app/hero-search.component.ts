@@ -8,7 +8,7 @@ import { Hero } from './hero';
 
 @Component({
   moduleId: module.id,
-  selector: 'hero-search',
+  selector: 'Hero-search',
   templateUrl: 'hero-search.component.html',
   styleUrls: [ 'hero-search.component.css' ],
   providers: [HeroSearchService]
@@ -43,7 +43,7 @@ export class HeroSearchComponent implements OnInit {
   }
 
   gotoDetail(hero: Hero): void {
-    let link = ['detail', hero.id];
+    let link = ['hero-detail', hero.id];
     this.router.navigate(link);
   }
 }

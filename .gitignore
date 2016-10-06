@@ -4,6 +4,7 @@
 node_modules
 bower_components
 /quickstart/app/*.map
-
 /quickstart/app/*.js
 
+quickstart-MetaFactory/src/snippets/java/
+quickstart/app/
