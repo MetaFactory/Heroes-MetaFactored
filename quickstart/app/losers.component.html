@@ -1,0 +1,29 @@
+<h2>My Losers</h2>
+<div>
+  <label>Loser name:</label> <input #loserName />
+  <button (click)="add(loserName.value); loserName.value=''">
+    Add
+  </button>
+</div>
+<ul class="losers">
+  <li *ngFor="let loser of losers" (click)="onSelect(loser)"
+      [class.selected]="loser === selectedLoser">
+    <span class="badge">{{loser.id}}</span>
+    <span>{{loser.name}}</span>
+    <button class="delete"
+      (click)="delete(loser); $event.stopPropagation()">x</button>
+  </li>
+</ul>
+<div *ngIf="selectedLoser">
+  <h2>
+    {{selectedLoser.name | uppercase}} is my loser
+  </h2>
+  <button (click)="gotoDetail()">View Details</button>
+</div>
+
+
+<!--
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+-->
