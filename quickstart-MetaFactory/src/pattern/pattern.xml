@@ -5,10 +5,11 @@
         xmlns="http://www.firstbase.nl/xsd/personaliom/pattern"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <properties>
-        <webapp.main.directory></webapp.main.directory>
+        <webapp.main.directory>.</webapp.main.directory>
         <app.name>my-app</app.name>
         <app.title>Tour of Heroes</app.title>
     </properties>
+
 
 
     <!--################################## General Entity Configuration Angular2 ####################################-->

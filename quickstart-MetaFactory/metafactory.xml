@@ -10,7 +10,6 @@
   </output>
 
 
-
   <buildSets>
     <!--Angular2 buildsets-->
     <buildSet name="Typescript">

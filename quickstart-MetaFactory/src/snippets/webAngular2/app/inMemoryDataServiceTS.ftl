@@ -11,7 +11,10 @@ export class InMemoryDataService implements InMemoryDbService {
     <#assign objectNameFU = object.getAttributeValue("name")?cap_first>
     <#assign objectNamePL = generator.getElementProperty(object, "name.plural", "${objectName}s")>
     <#assign objectNamePLLC = objectNamePL?lower_case>
-    let ${objectNamePLLC} = [
+<#--TODO: freemarker generatie van een snippit gebruiken om een database filtje per object te genereren.-->
+<#assign fileName = "mockupWebDBData.${objectNamePLLC}">
+${metafactory.evaluateFreeMarkerSnippet(fileName,
+"    let ${objectNamePLLC} = [
       {id: 11, name: 'Mr. Nice'},
       {id: 12, name: 'Narco'},
       {id: 13, name: 'Bombasto'},
@@ -22,7 +25,7 @@ export class InMemoryDataService implements InMemoryDbService {
       {id: 18, name: 'Dr IQ'},
       {id: 19, name: 'Magma'},
       {id: 20, name: 'Tornado'}
-    ];
+    ];")}
 </#list>
 <#list modelObjects as object>
     <#assign numberObjects = modelObjects.size()>
