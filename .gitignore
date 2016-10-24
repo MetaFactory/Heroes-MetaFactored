@@ -5,6 +5,7 @@ node_modules
 bower_components
 */quickstart/app/*.map
 */quickstart/app/*.js
+npm-debug.log.*
 
 quickstart-MetaFactory/src/snippets/java/
 

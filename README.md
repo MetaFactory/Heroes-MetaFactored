@@ -1,4 +1,7 @@
-"# Heroes-MetaFactored"
+"# Heroes-MetaFactored" 
+
+Making the Heroes-MetaFactored runnable.
+
 In order to generate the application with MetaFactory first the following steps has to be taken:
 - cd to Heroes-MetaFactored\quickstart
 - npm install
