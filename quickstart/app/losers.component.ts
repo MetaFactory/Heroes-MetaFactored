@@ -4,7 +4,6 @@ import { Router }           from '@angular/router';
 import { Loser }                from './loser';
 import { LoserService }         from './loser.service';
 
-
 @Component({
   moduleId: module.id,
   selector: 'my-losers',

@@ -7,24 +7,12 @@
 <#assign modelObjectNameLC = modelObjectName?lower_case>
 <#assign attributes = currentModelObject.getChildren("attribute", nsModel)>
 <#assign references = currentModelObject.getChildren("reference", nsModel)>
-<#assign properties = currentModelObject.getChildren("properties", nsModel)>
 import { Component, OnInit} from '@angular/core';
 import { Router }           from '@angular/router';
 
 <#-- Create the Component imports for the objects in the MetaFactory model. -->
 import { ${modelObjectName} }                from './${modelObjectNameLC}';
 import { ${modelObjectName}Service }         from './${modelObjectNameLC}.service';
-
-<#-- Create the Class imports for the referenced objects in the MetaFactory model. -->
-<#--/** Import references: */-->
-<#assign references = currentModelObject.getChildren("reference", nsModel)>
-<#list references as reference>
-    <#assign referenceName = reference.getAttributeValue("name")>
-    <#assign referenceNameLC = referenceName?lower_case>
-    <#assign referenceNameFL = referenceName?uncap_first>
-    <#assign referenceNameFC = referenceName?cap_first>
-import { ${referenceNameFC} } from './${referenceNameLC}';
-</#list>
 
 @Component({
   moduleId: module.id,

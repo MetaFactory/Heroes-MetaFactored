@@ -11,15 +11,6 @@ import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 import { ${modelObjectName} } from './${modelObjectNameLC}';
-<#-- Create the Class imports for the referenced objects in the MetaFactory model. -->
-<#--/** Import Angular2 imports for the entity references: */-->
-<#assign references = currentModelObject.getChildren("reference", nsModel)>
-<#list references as reference>
-    <#assign referenceName = reference.getAttributeValue("name")>
-    <#assign referenceNameLC = referenceName?lower_case>
-    <#assign referenceNameFC = referenceName?cap_first>
-import { ${referenceNameFC} } from './${referenceNameLC}';
-</#list>
 
 @Injectable()
 export class ${modelObjectName}Service {
