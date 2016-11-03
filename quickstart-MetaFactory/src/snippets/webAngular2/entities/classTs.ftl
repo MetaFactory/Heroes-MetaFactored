@@ -3,13 +3,11 @@
 
 <#assign modelObjectName = currentModelObject.getAttributeValue("name")>
 <#assign modelObjectNameFL = modelObjectName?uncap_first>
-<#assign modelObjectNamePL = generator.getElementProperty(currentModelObject, "name.plural", "${modelObjectName}s")>
+<#assign modelObjectNamePL = metafactory.getElementProperty(currentModelObject, "name.plural", "${modelObjectName}s")>
 <#assign modelObjectNamePLFL = modelObjectNamePL?uncap_first>
-<#assign modelObjectNameLC = modelObjectName?lower_case>
 
 <#assign attributes = currentModelObject.getChildren("attribute", nsModel)>
 <#assign references = currentModelObject.getChildren("reference", nsModel)>
-<#assign properties = currentModelObject.getChildren("properties", nsModel)>
 
 
 <#-- Create the imports for the references in the MetaFactory model. -->
