@@ -12,9 +12,9 @@
 
 <#-- Create the imports for the references in the MetaFactory model. -->
 <#list references as reference>
-    <#assign referenceLC = reference.getAttributeValue("name")?lower_case>
-    <#assign referenceFC = reference.getAttributeValue("name")?cap_first>
-import { ${referenceFC} }  from '../${referenceLC}';
+    <#assign referenceClassFile = reference.getAttributeValue("type")?lower_case>
+    <#assign referenceClassName = reference.getAttributeValue("type")>
+import { ${referenceClassName} }  from './${referenceClassFile}';
 </#list>
 
 export class ${modelObjectName} {
