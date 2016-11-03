@@ -8,6 +8,9 @@
             </properties>
             <attribute name="id" type="Integer"/>
             <attribute name="name" type="String"/>
+            <reference name="favoriteLoser" type="Loser" multiplicity="0..1" notnull="false">
+
+            </reference>
         </object>
         <object name="Loser">
             <properties>
@@ -16,5 +19,13 @@
             <attribute name="id" type="Integer"/>
             <attribute name="name" type="String"/>
         </object>
+        <!--<object name="RealHero">-->
+            <!--<properties>-->
+                <!--<name.plural>RealHeros</name.plural>-->
+            <!--</properties>-->
+            <!--<attribute name="id" type="Integer"/>-->
+            <!--<attribute name="speciality" type="String"/>-->
+            <!--<attribute name="description" type="String"/>-->
+        <!--</object>-->
     </package>
 </model>
