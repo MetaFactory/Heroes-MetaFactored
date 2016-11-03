@@ -4,4 +4,3 @@ target
 *.iml
 node_modules
 bower_components
-*.map
