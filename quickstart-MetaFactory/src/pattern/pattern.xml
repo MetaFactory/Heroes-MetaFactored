@@ -11,6 +11,7 @@
     </properties>
 
 
+
     <!--################################## General Entity Configuration Angular2 ####################################-->
     <xi:include parse="xml" href="webAngular2/entities/classTs.xml"/>
     <xi:include parse="xml" href="webAngular2/entities/classServiceTs.xml"/>

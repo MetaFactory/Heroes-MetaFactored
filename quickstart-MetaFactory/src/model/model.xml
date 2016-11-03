@@ -9,7 +9,7 @@
             <attribute name="id" type="Integer"/>
             <attribute name="name" type="String"/>
         </object>
-                <object name="Loser">
+        <object name="Loser">
             <properties>
                 <name.plural>Losers</name.plural>
             </properties>

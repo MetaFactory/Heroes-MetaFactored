@@ -1,18 +1,18 @@
 <#assign modelObjects = currentModelPackage.getChildren("object", nsModel)>
-<#list modelObjects as modelObject>
-    <#assign modelObjectName = modelObject.getAttributeValue("name")>
-    <#assign modelObjectNameFU = modelObject.getAttributeValue("name")?uncap_first>
-    <#assign modelObjectNamePL = metafactory.getElementProperty(modelObject, "name.plural", "${modelObject}s")>
-    <#assign modelObjectNamePLFL = modelObjectNamePL?uncap_first>
-<h3>Top ${modelObjectNamePL}</h3>
+<#list modelObjects as object>
+    <#assign objectName = object.getAttributeValue("name")>
+    <#assign objectNameFU = object.getAttributeValue("name")?uncap_first>
+    <#assign objectNamePL = metafactory.getElementProperty(object, "name.plural", "${object}s")>
+    <#assign objectNamePLFL = objectNamePL?uncap_first>
+<h3>Top ${objectNamePL}</h3>
 <div class="grid grid-pad">
-  <div *ngFor="let ${modelObjectNameFU} of ${modelObjectNamePLFL}" (click)="gotoDetail${modelObjectNameFU}(${modelObjectNameFU})" class="col-1-4">
-    <div class="module ${modelObjectNameFU}">
-      <h4>{{${modelObjectNameFU}.name}}</h4>
+  <div *ngFor="let ${objectNameFU} of ${objectNamePLFL}" (click)="gotoDetail${objectName}(${objectNameFU})" class="col-1-4">
+    <div class="module ${objectNameFU}">
+      <h4>{{${objectNameFU}.name}}</h4>
     </div>
   </div>
 </div>
-<${modelObjectNameFU}-search></${modelObjectNameFU}-search>
+<${objectName}-search></${objectName}-search>
 </#list>
 
 

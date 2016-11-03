@@ -11,12 +11,6 @@
 <#assign references = currentModelObject.getChildren("reference", nsModel)>
 <#assign properties = currentModelObject.getChildren("properties", nsModel)>
 
-<#--/**-->
-<#--* Created by MetaFactory  B.V. 3-8-2016.-->
-<#--* Jan Hartman-->
-<#--* Angular2 TypeScript-->
-<#--* Content for the typescript 'classes' file:  app/${modelObjectNameLC}/${modelObjectNameLC}.ts-->
-<#--*/-->
 
 <#-- Create the imports for the references in the MetaFactory model. -->
 <#list references as reference>
@@ -45,10 +39,10 @@ export class ${modelObjectName} {
         <#assign referencedObjectElement = metafactory.findChildByAttribute(currentModelPackage, "object", "name" , referenceType)>
         <#assign objectNamePL = metafactory.getElementProperty(referencedObjectElement, "name.plural", "${referenceName}s")>
         <#assign objectNamePLFL = objectNamePL?uncap_first>
-        <#if reference.getAttributeValue("multiplicity").matches("1..1") || reference.getAttributeValue("multiplicity").matches("0..1")>
+        <#if reference.getAttributeValue("multiplicity").endsWith("..1")>
     ${referenceNameFU} : ${referenceType};
         </#if>
-        <#if reference.getAttributeValue("multiplicity").matches("0..n") || reference.getAttributeValue("multiplicity").matches("1..n")>
+        <#if reference.getAttributeValue("multiplicity").endsWith("..n")>
     ${objectNamePLFL} : ${referenceType}[];
         </#if>
     </#list>

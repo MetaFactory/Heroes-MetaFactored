@@ -7,7 +7,7 @@
 <#assign attributes = currentModelObject.getChildren("attribute", nsModel)>
 <h2>My ${modelObjectNamePL}</h2>
 <div>
-  <label>${modelObjectName} name:</label> <input #heroName />
+  <label>${modelObjectName} name:</label> <input #${modelObjectNameFL}Name />
   <button (click)="add(${modelObjectNameFL}Name.value); ${modelObjectNameFL}Name.value=''">
     Add
   </button>

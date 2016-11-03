@@ -8,7 +8,7 @@ import { Loser } from './loser';
 
 @Component({
   moduleId: module.id,
-  selector: 'loser-search',
+  selector: 'Loser-search',
   templateUrl: 'loser-search.component.html',
   styleUrls: [ 'loser-search.component.css' ],
   providers: [LoserSearchService]
@@ -43,7 +43,7 @@ export class LoserSearchComponent implements OnInit {
   }
 
   gotoDetail(loser: Loser): void {
-    let link = ['detail', loser.id];
+    let link = ['loser-detail', loser.id];
     this.router.navigate(link);
   }
 }

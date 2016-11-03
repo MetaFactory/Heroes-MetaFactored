@@ -15,7 +15,7 @@ import { ${modelObjectName} } from './${modelObjectNameLC}';
 
 @Component({
   moduleId: module.id,
-  selector: '${modelObjectNameLC}-search',
+  selector: '${modelObjectName}-search',
   templateUrl: '${modelObjectNameLC}-search.component.html',
   styleUrls: [ '${modelObjectNameLC}-search.component.css' ],
   providers: [${modelObjectName}SearchService]
@@ -50,7 +50,7 @@ export class ${modelObjectName}SearchComponent implements OnInit {
   }
 
   gotoDetail(${modelObjectNameFL}: ${modelObjectName}): void {
-    let link = ['detail', ${modelObjectNameFL}.id];
+    let link = ['${modelObjectNameFL}-detail', ${modelObjectNameFL}.id];
     this.router.navigate(link);
   }
 }

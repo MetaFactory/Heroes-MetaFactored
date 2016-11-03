@@ -7,7 +7,7 @@ import { LoserService } from './loser.service';
 
 @Component({
   moduleId: module.id,
-  selector: 'my-loser-detail',
+  selector: 'Loser-detail',
   templateUrl: 'loser-detail.component.html',
   styleUrls: [ 'loser-detail.component.css' ]
 })

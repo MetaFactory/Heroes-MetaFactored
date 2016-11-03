@@ -4,7 +4,6 @@ import { Router }           from '@angular/router';
 import { Loser }                from './loser';
 import { LoserService }         from './loser.service';
 
-/** Import references: */
 
 @Component({
   moduleId: module.id,
@@ -54,7 +53,7 @@ export class LosersComponent implements OnInit {
   }
 
   gotoDetail(): void {
-    this.router.navigate(['/detail', this.selectedLoser.id]);
+    this.router.navigate(['loser-detail', this.selectedLoser.id]);
   }
 }
 
