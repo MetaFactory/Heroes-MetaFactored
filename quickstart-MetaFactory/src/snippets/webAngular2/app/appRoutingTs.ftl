@@ -10,7 +10,7 @@ import { DashboardComponent }  from './dashboard.component';
     <#assign objectName = object.getAttributeValue("name")>
     <#assign objectNameLC = object.getAttributeValue("name")?lower_case>
     <#assign objectNameFU = object.getAttributeValue("name")?cap_first>
-    <#assign objectNamePL = generator.getElementProperty(object, "name.plural", "${objectName}s")>
+    <#assign objectNamePL = metafactory.getElementProperty(object, "name.plural", "${objectName}s")>
     <#assign objectNamePLLC = objectNamePL?lower_case>
 import { ${objectNamePL}Component }       from './${objectNamePLLC}.component';
 import { ${objectName}SearchComponent }   from './${objectNameLC}-search.component';
@@ -33,7 +33,7 @@ const appRoutes: Routes = [
     <#assign objectNameFU = object.getAttributeValue("name")?cap_first>
     <#assign objectNameFL = object.getAttributeValue("name")?uncap_first>
     <#assign objectName   = object.getAttributeValue("name")>
-    <#assign objectNamePL = generator.getElementProperty(object, "name.plural", "${objectName}s")>
+    <#assign objectNamePL = metafactory.getElementProperty(object, "name.plural", "${objectName}s")>
     <#assign objectNamePLFL = objectNamePL?uncap_first>
    {
     path: '${objectNameFL}-search/:id',     // id of the single selected object.

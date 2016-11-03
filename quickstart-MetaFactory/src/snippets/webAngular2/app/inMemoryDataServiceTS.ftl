@@ -9,7 +9,7 @@ export class InMemoryDataService implements InMemoryDbService {
     <#assign objectName = object.getAttributeValue("name")>
     <#assign objectNameLC = object.getAttributeValue("name")?lower_case>
     <#assign objectNameFU = object.getAttributeValue("name")?cap_first>
-    <#assign objectNamePL = generator.getElementProperty(object, "name.plural", "${objectName}s")>
+    <#assign objectNamePL = metafactory.getElementProperty(object, "name.plural", "${objectName}s")>
     <#assign objectNamePLLC = objectNamePL?lower_case>
 <#--TODO: freemarker generatie van een snippit gebruiken om een database filtje per object te genereren.-->
 <#assign fileName = "mockupWebDBData.${objectNamePLLC}">
@@ -29,7 +29,7 @@ ${metafactory.evaluateFreeMarkerSnippet(fileName,
 </#list>
 <#list modelObjects as object>
     <#assign numberObjects = modelObjects.size()>
-    <#assign objectNamePL = generator.getElementProperty(object, "name.plural")>
+    <#assign objectNamePL = metafactory.getElementProperty(object, "name.plural")>
     <#assign objectNamePLLC = objectNamePL?lower_case><#if object_index == 0>    return {</#if><#if object_index == numberObjects-1>${objectNamePLLC}};<#else>${objectNamePLLC},</#if></#list>
     }
 }

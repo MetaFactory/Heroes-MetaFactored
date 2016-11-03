@@ -17,7 +17,7 @@ import { DashboardComponent }   from './dashboard.component';
     <#assign objectName = object.getAttributeValue("name")>
     <#assign objectNameLC = object.getAttributeValue("name")?lower_case>
     <#assign objectNameFU = object.getAttributeValue("name")?cap_first>
-    <#assign objectNamePL = generator.getElementProperty(object, "name.plural", "${objectName}s")>
+    <#assign objectNamePL = metafactory.getElementProperty(object, "name.plural", "${objectName}s")>
     <#assign objectNamePLLC = objectNamePL?lower_case>
 import { ${objectNamePL}Component }           from './${objectNamePLLC}.component';
 import { ${objectName}DetailComponent }   from './${objectNameLC}-detail.component';
@@ -42,7 +42,7 @@ import { routing }              from './app.routing';
         <#-- Declare the Components for all the objects in the MetaFactory model. -->
         <#list modelObjects as object>
             <#assign objectName = object.getAttributeValue("name")>
-            <#assign objectNamePL = generator.getElementProperty(object, "name.plural", "${objectName}s")>
+            <#assign objectNamePL = metafactory.getElementProperty(object, "name.plural", "${objectName}s")>
         ${objectName}DetailComponent,
         ${objectNamePL}Component,
         ${objectName}SearchComponent,

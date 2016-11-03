@@ -2,7 +2,7 @@
 <#if !(currentModelObject)??>  <#stop "currentModelObject not found in context" ></#if>
 <#assign modelObjectName = currentModelObject.getAttributeValue("name")>
 <#assign modelObjectNameFL = modelObjectName?uncap_first>
-<#assign modelObjectNamePL = generator.getElementProperty(currentModelObject, "name.plural", "${modelObjectName}s")>
+<#assign modelObjectNamePL = metafactory.getElementProperty(currentModelObject, "name.plural", "${modelObjectName}s")>
 <#assign modelObjectNamePLFL = modelObjectNamePL?uncap_first>
 <#assign modelObjectNameLC = modelObjectName?lower_case>
 

@@ -20,7 +20,7 @@ import { Component }          from '@angular/core';
     <#assign objectNameFU = object.getAttributeValue("name")?cap_first>
     <#assign objectNameFL = object.getAttributeValue("name")?uncap_first>
     <#assign objectName   = object.getAttributeValue("name")>
-    <#assign objectNamePL = generator.getElementProperty(object, "name.plural", "${objectName}s")>
+    <#assign objectNamePL = metafactory.getElementProperty(object, "name.plural", "${objectName}s")>
     <#assign objectNamePLFL = objectNamePL?uncap_first>
       <a routerLink="/${objectNamePLFL}" routerLinkActive="active">${objectNamePL}</a>
 </#list>
