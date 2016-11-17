@@ -15,13 +15,13 @@ Unfortunately there is not yet a downloadable version available, but this is on 
 
 Once you obtained MetaFactory and the IntelliJ plugin, the project needs to be setup.
 
-1. clone this github repository
-2. open IntelliJ and create new project from existing sources
-3. go to project structure and add 2 new modules:
-⋅⋅* quickstart
-⋅⋅* quickstart-MetaFactory
-4. mark quickstart-MetaFactory as MetaFactory module
-5. mark quickstart/snippets directory as sources
+* clone this github repository
+* open IntelliJ and create new project from existing sources
+* go to project structure and add 2 new modules:
+  * quickstart
+  * quickstart-MetaFactory
+* mark quickstart-MetaFactory as MetaFactory module
+* mark quickstart/snippets directory as sources
 
 ## How to run
 
