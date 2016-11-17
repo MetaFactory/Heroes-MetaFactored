@@ -9,7 +9,7 @@ see which patterns (code instructions) were written to generate the Heroes appli
 ## How to install
 
 In order to generate the resulting code base we need the tool MetaFactory for which we also created a plugin for IntelliJ.
-Please [leave us an email](mailto://info@metafactory.nl) and we will send you the tool and plugin so you can play with it.
+Please [leave us an email](mailto:info@metafactory.nl?subject=Request%20for%20MetaFactory%20download%20from%20github) and we will send you the tool and plugin so you can play with it.
 
 Unfortunately there is not yet a downloadable version available, but this is on our shortlist to introduce.
 
