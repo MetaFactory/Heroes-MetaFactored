@@ -2,7 +2,7 @@
 <div>
   <label>Hero name:</label> <input #heroName />
   <button (click)="add(heroName.value); heroName.value=''">
-    Add
+    Add a Hero
   </button>
 </div>
 <ul class="heroes">
@@ -10,6 +10,7 @@
       [class.selected]="hero === selectedHero">
     <span class="badge">{{hero.id}}</span>
     <span>{{hero.name}}</span>
+    <span>{{hero.superPower}}</span>
     <button class="delete"
       (click)="delete(hero); $event.stopPropagation()">x</button>
   </li>
@@ -20,10 +21,3 @@
   </h2>
   <button (click)="gotoDetail()">View Details</button>
 </div>
-
-
-<!--
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
--->

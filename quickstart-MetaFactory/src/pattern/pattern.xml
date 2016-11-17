@@ -10,7 +10,9 @@
         <app.title>Tour of Heroes</app.title>
     </properties>
 
-
+    <freemarker>
+        <freemarkerLibrary namespace="naming">/webAngular2/util/naming.ftl</freemarkerLibrary>
+    </freemarker>
 
     <!--################################## General Entity Configuration Angular2 ####################################-->
     <xi:include parse="xml" href="webAngular2/entities/classTs.xml"/>

@@ -1,3 +1,6 @@
+<#--stop if $currentModelPackage is null-->
+<#if !(currentModelPackage)??>  <#stop "currentModelPackage not found in context"> </#if>
+
 <#assign modelObjects = currentModelPackage.getChildren("object", nsModel)>
 <#list modelObjects as object>
     <#assign objectName = object.getAttributeValue("name")>

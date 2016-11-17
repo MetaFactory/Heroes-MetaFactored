@@ -1,10 +1,19 @@
+<#--------------------------------------------------------------------------------------------------------------------->
+<#--Generates the TypeScript search component file-->
+<#--------------------------------------------------------------------------------------------------------------------->
+
 <#--stop if $currentModelObject is null-->
 <#if !(currentModelObject)??>  <#stop "currentModelObject not found in context" ></#if>
+
 <#assign modelObjectName = currentModelObject.getAttributeValue("name")>
 <#assign modelObjectNameFL = modelObjectName?uncap_first>
 <#assign modelObjectNamePL = metafactory.getElementProperty(currentModelObject, "name.plural", "${modelObjectName}s")>
 <#assign modelObjectNamePLFL = modelObjectNamePL?uncap_first>
 <#assign modelObjectNameLC = modelObjectName?lower_case>
+
+<#--------------------------------------------------------------------------------------------------------------------->
+<#--freemarker output logic from here-->
+<#--------------------------------------------------------------------------------------------------------------------->
 import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router';
 import { Observable }        from 'rxjs/Observable';
@@ -54,10 +63,3 @@ export class ${modelObjectName}SearchComponent implements OnInit {
     this.router.navigate(link);
   }
 }
-
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

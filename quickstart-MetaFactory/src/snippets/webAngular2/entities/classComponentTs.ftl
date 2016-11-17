@@ -1,5 +1,10 @@
+<#--------------------------------------------------------------------------------------------------------------------->
+<#--Generates the TypeScript component file-->
+<#--------------------------------------------------------------------------------------------------------------------->
+
 <#--stop if $currentModelObject is null-->
 <#if !(currentModelObject)??>  <#stop "currentModelObject not found in context" ></#if>
+
 <#assign modelObjectName = currentModelObject.getAttributeValue("name")>
 <#assign modelObjectNameFL = modelObjectName?uncap_first>
 <#assign modelObjectNamePL = metafactory.getElementProperty(currentModelObject, "name.plural", "${modelObjectName}s")>
@@ -7,6 +12,10 @@
 <#assign modelObjectNameLC = modelObjectName?lower_case>
 <#assign attributes = currentModelObject.getChildren("attribute", nsModel)>
 <#assign references = currentModelObject.getChildren("reference", nsModel)>
+
+<#--------------------------------------------------------------------------------------------------------------------->
+<#--freemarker output logic from here-->
+<#--------------------------------------------------------------------------------------------------------------------->
 import { Component, OnInit} from '@angular/core';
 import { Router }           from '@angular/router';
 
@@ -65,10 +74,3 @@ export class ${modelObjectNamePL}Component implements OnInit {
     this.router.navigate(['${modelObjectNameFL}-detail', this.selected${modelObjectName}.id]);
   }
 }
-
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

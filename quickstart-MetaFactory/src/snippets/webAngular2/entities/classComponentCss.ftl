@@ -1,7 +1,15 @@
+<#--------------------------------------------------------------------------------------------------------------------->
+<#--Generates the CSS component file-->
+<#--------------------------------------------------------------------------------------------------------------------->
+<#if !(currentModelObject)??>  <#stop "currentModelObject not found in context" ></#if>
+
 <#assign modelObjectName = currentModelObject.getAttributeValue("name")>
-<#assign modelObjectNameFL = modelObjectName?uncap_first>
 <#assign modelObjectNamePL = metafactory.getElementProperty(currentModelObject, "name.plural", "${modelObjectName}s")>
 <#assign modelObjectNamePLFL = modelObjectNamePL?uncap_first>
+
+<#--------------------------------------------------------------------------------------------------------------------->
+<#--freemarker output logic from here-->
+<#--------------------------------------------------------------------------------------------------------------------->
 .selected {
   background-color: #CFD8DC !important;
   color: white;
@@ -10,7 +18,7 @@
   margin: 0 0 2em 0;
   list-style-type: none;
   padding: 0;
-  width: 15em;
+  width: 35em;
 }
 .${modelObjectNamePLFL} li {
   cursor: pointer;
@@ -68,10 +76,3 @@ button.delete {
   background-color: gray !important;
   color:white;
 }
-
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

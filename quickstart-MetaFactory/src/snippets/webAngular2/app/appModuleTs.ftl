@@ -1,3 +1,9 @@
+<#--stop if $currentModelPackage is null-->
+<#if !(currentModelPackage)??>  <#stop "currentModelPackage not found in context"> </#if>
+
+<#--import naming.ftl so that code completion is available in this particular freemarker template-->
+<#import "/webAngular2/util/naming.ftl" as naming />
+
 <#assign modelObjects = currentModelPackage.getChildren("object", nsModel)>
 import './rxjs-extensions';
 
@@ -16,7 +22,6 @@ import { DashboardComponent }   from './dashboard.component';
 <#list modelObjects as object>
     <#assign objectName = object.getAttributeValue("name")>
     <#assign objectNameLC = object.getAttributeValue("name")?lower_case>
-    <#assign objectNameFU = object.getAttributeValue("name")?cap_first>
     <#assign objectNamePL = metafactory.getElementProperty(object, "name.plural", "${objectName}s")>
     <#assign objectNamePLLC = objectNamePL?lower_case>
 import { ${objectNamePL}Component }           from './${objectNamePLLC}.component';
@@ -52,7 +57,8 @@ import { routing }              from './app.routing';
         <#-- Add the providers for all the objects in the MetaFactory model. -->
         <#list modelObjects as object>
             <#assign objectName = object.getAttributeValue("name")>
-        ${objectName}Service,
+            <#assign serviceName = naming.getTSServiceName(objectName)>
+        ${serviceName},
         </#list>
     ],
     bootstrap:    [
@@ -64,10 +70,3 @@ import { routing }              from './app.routing';
 export class AppModule {
 
 }
-
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

@@ -2,23 +2,37 @@
 <model xmlns="http://www.firstbase.nl/xsd/personaliom/model" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.firstbase.nl/xsd/personaliom/model http://www.firstbase.nl/xsd/personaliom/model.xsd">
     <package name="domain">
+
         <object name="Hero">
             <properties>
                 <name.plural>Heroes</name.plural>
             </properties>
             <attribute name="id" type="Integer"/>
-            <attribute name="name" type="String"/>
-            <reference name="favoriteLoser" type="Loser" multiplicity="0..1" notnull="false">
-
-            </reference>
+            <attribute name="name" type="String">
+                <properties>
+                    <gui.show.in.combo>true</gui.show.in.combo>
+                </properties>
+            </attribute>
+            <attribute name="superPower" type="String">
+                <properties>
+                    <gui.show.in.combo>true</gui.show.in.combo>
+                </properties>
+            </attribute>
+            <reference name="favoriteLoser" type="Loser" multiplicity="0..1" notnull="false" />
         </object>
+
         <object name="Loser">
             <properties>
                 <name.plural>Losers</name.plural>
             </properties>
             <attribute name="id" type="Integer"/>
-            <attribute name="name" type="String"/>
+            <attribute name="name" type="String">
+                <properties>
+                    <gui.show.in.combo>true</gui.show.in.combo>
+                </properties>
+            </attribute>
         </object>
+
         <!--<object name="RealHero">-->
             <!--<properties>-->
                 <!--<name.plural>RealHeros</name.plural>-->

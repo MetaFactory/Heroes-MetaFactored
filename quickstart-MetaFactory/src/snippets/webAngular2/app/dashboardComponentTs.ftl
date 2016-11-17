@@ -1,5 +1,6 @@
 <#--stop if currentModelPackage is null-->
 <#if !(currentModelPackage)??>  <#stop "currentModelPackage not found in context" ></#if>
+
 <#assign modelObjects = currentModelPackage.getChildren("object", nsModel)>
 import { Component, OnInit } from '@angular/core';
 import { Router }            from '@angular/router';

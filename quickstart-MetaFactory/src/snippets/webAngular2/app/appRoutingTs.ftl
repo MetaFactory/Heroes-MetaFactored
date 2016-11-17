@@ -1,6 +1,8 @@
 <#--stop if $currentModelObject is null-->
 <#if !(currentModelPackage)??>  <#stop "currentModelPackage not found in context" ></#if>
+
 <#assign modelObjects = currentModelPackage.getChildren("object", nsModel)>
+
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -29,7 +31,6 @@ const appRoutes: Routes = [
   },
 <#--Add the component routes for the objectDetailComponent, objectDialogComponent and objectsComponent -->
 <#list modelObjects as object>
-    <#assign objectNameLC = object.getAttributeValue("name")?lower_case>
     <#assign objectNameFU = object.getAttributeValue("name")?cap_first>
     <#assign objectNameFL = object.getAttributeValue("name")?uncap_first>
     <#assign objectName   = object.getAttributeValue("name")>
@@ -48,10 +49,3 @@ const appRoutes: Routes = [
 </#list>
 ];
 export const routing: ModuleWithProviders = RouterModule.forRoot(appRoutes);
-
-
-/*
-Copyright 2016 Google Inc. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/
