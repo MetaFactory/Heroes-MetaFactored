@@ -6,6 +6,8 @@
 [Angular2 Heroes](https://angular.io/docs/ts/latest/tutorial/) application. This github repository can be cloned to
 see which patterns (code instructions) were written to generate the Heroes application.
 
+A [blog](https://www.metafactory.nl/angular-2-tour-of-heroes-and-metafactory/) about the MetaFactoring of the Tour of Heroes is available on the MetaFactory website: [Angular 2 Tour of Heroes and MetaFactory](https://www.metafactory.nl/angular-2-tour-of-heroes-and-metafactory/) .  
+
 ## How to install
 
 In order to generate the resulting code base we need the tool MetaFactory for which we also created a plugin for IntelliJ.
